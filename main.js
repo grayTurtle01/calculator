@@ -25,6 +25,7 @@ document.querySelector('#equals').onclick = function(){
     display.value = eval(input)
 }
 
+
 document.querySelector('#add').onclick = function(){
     display.value += '+'
 }
@@ -40,4 +41,7 @@ document.querySelector('#multiply').onclick = function(){
 document.querySelector('#divide').onclick = function(){
     display.value += '/'
 }
-
+// Decimal Point
+document.querySelector('#decimal').onclick = function(){
+    display.value += '.'
+}
