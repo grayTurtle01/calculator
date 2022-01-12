@@ -9,6 +9,10 @@
 
 #display{
   width: 100%;
+  text-align: right;
+
+  background: black;
+  color: orange;
 }
 
 #buttons{
@@ -21,3 +25,26 @@
     width: 50%;
     margin-right:-5px;
 }
+
+.number{
+    background: gray;
+    color: white;
+    height: 100%;
+}
+
+.operation{
+    background: lightgray;
+    color: white;
+}
+
+#equals{
+    background: lightblue;
+    color: white;
+}
+
+#clear{
+   background: crimson;
+   color: white; 
+}
+
+
