@@ -1,67 +1,128 @@
+let str_formula = '';
+let new_input = '';
+
 // clear button
 let display = document.querySelector("#display")
 document.querySelector("#clear").onclick = function(){
     display.value = '0'
+    str_formula = ''
+    new_input = ''
 }
+
 
 // numbers buttons
 let numbers = document.querySelectorAll('.number')
 for( number of numbers){
     number.onclick = function(){
         let value = this.innerText
-        if( display.value == '0')
+
+        if( display.value == '0'){
             display.value = value
-        else
+            new_input = value
+        }
+        else{
             display.value += value
+            new_input += value
+        }        
     }
 }
 
 // operations
-// let result = 0;
-// let input = 0;
+
 
 document.querySelector('#equals').onclick = function(){
-    check_last_operator()
-    input_str = display.value
-    result = eval(input_str)
+    //check_last_operator()
+
+    new_input = display.value
+    str_formula += new_input
+   
+    result = eval(str_formula)
+    str_formula = ''
+    //str_formula = result
    
     display.value = result
+    new_input = result
 }
 
 
 document.querySelector('#add').onclick = function(){
+    new_input = display.value
+    display.value = ''
+    
+    str_formula += new_input 
+
     check_last_operator()
-    display.value += '+'
+    str_formula += '+'
+    new_input = ''
+    console.log(str_formula)
+
 }
 
 document.querySelector('#subtract').onclick = function(){
+    display.value = ''
+    
+    str_formula += new_input 
+
     check_last_operator_for_substract()
-    display.value += '-'
+    str_formula += '-'
+    new_input = ''
+
+    console.log(str_formula)
+
 }
 
 document.querySelector('#multiply').onclick = function(){
+    new_input = display.value
+    display.value = ''
+    
+    str_formula += new_input 
+
     check_last_operator()
-    display.value += '*'
+    str_formula += '*'
+    new_input = ''
+
+    console.log(str_formula)
 }
 
 document.querySelector('#divide').onclick = function(){
+    display.value = ''
+    
+    str_formula += new_input 
+
     check_last_operator()
-    display.value += '/'
+    str_formula += '/'
+    new_input = ''
+
+    console.log(str_formula)
+
 }
 // Decimal Point
 document.querySelector('#decimal').onclick = function(){
-    if( display.value.slice(-1) != '.')
+    if( display.value.includes('.') == false){
         display.value += '.'
+        new_input += '.'
+    }
+
+    console.log(str_formula)
 }
 
 function check_last_operator() {
-    if( "+-*/".includes( display.value.slice(-1) )){
-        display.value = display.value.slice(0,-1)
+
+    while( "+-*/".includes( str_formula.slice(-1) ) ){
+        str_formula = str_formula.slice(0,-1) 
     }
+
+    // if( "+-*/".includes( str_formula.slice(-1) )){
+    //     str_formula = str_formula.slice(0,-1)
+    // }
 }
 
 function check_last_operator_for_substract() {
-    if( "-".includes( display.value.slice(-1) )){
-        display.value = display.value.slice(0,-1)
+    if( "-".includes( str_formula.slice(-1) )){
+        str_formula = str_formula.slice(0,-1)
     }
+}
+
+display.onkeyup = function(){
+    console.log(str_formula)
 }
