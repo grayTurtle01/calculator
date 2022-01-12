@@ -35,7 +35,7 @@ document.querySelector('#add').onclick = function(){
 }
 
 document.querySelector('#subtract').onclick = function(){
-    check_last_operator()
+    check_last_operator_for_substract()
     display.value += '-'
 }
 
@@ -55,6 +55,13 @@ document.querySelector('#decimal').onclick = function(){
 }
 
 function check_last_operator() {
-    if( "+-*/".includes( display.value.slice(-1) ))
+    if( "+-*/".includes( display.value.slice(-1) )){
         display.value = display.value.slice(0,-1)
+    }
+}
+
+function check_last_operator_for_substract() {
+    if( "-".includes( display.value.slice(-1) )){
+        display.value = display.value.slice(0,-1)
+    }
 }
