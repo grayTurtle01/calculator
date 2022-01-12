@@ -43,5 +43,6 @@ document.querySelector('#divide').onclick = function(){
 }
 // Decimal Point
 document.querySelector('#decimal').onclick = function(){
-    display.value += '.'
+    if( display.value.slice(-1) != '.')
+        display.value += '.'
 }
