@@ -22,8 +22,10 @@ let input = 0;
 
 document.querySelector('#equals').onclick = function(){
     check_last_operator()
-    input = display.value
-    display.value = eval(input)
+    input_str = display.value
+    input = eval(input_str)
+    fixed_input = input.toFixed(4)
+    display.value = fixed_input
 }
 
 
