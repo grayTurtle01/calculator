@@ -17,15 +17,15 @@ for( number of numbers){
 }
 
 // operations
-let result = 0;
-let input = 0;
+// let result = 0;
+// let input = 0;
 
 document.querySelector('#equals').onclick = function(){
     check_last_operator()
     input_str = display.value
-    input = eval(input_str)
-    fixed_input = input.toFixed(4)
-    display.value = fixed_input
+    result = eval(input_str)
+   
+    display.value = result
 }
 
 
