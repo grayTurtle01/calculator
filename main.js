@@ -1,6 +1,6 @@
 // clear button
+let display = document.querySelector("#display")
 document.querySelector("#clear").onclick = function(){
-    let display = document.querySelector("#display")
     display.value = '0'
 }
 
@@ -9,6 +9,32 @@ let numbers = document.querySelectorAll('.number')
 for( number of numbers){
     number.onclick = function(){
         let value = this.innerText
-        document.querySelector('#display').value = value
+        display.value += value
     }
 }
+
+// operations
+let result = 0;
+let input = 0;
+
+document.querySelector('#equals').onclick = function(){
+    input = display.value
+    display.value = eval(input)
+}
+
+document.querySelector('#add').onclick = function(){
+    display.value += '+'
+}
+
+document.querySelector('#subtract').onclick = function(){
+    display.value += '-'
+}
+
+document.querySelector('#multiply').onclick = function(){
+    display.value += '*'
+}
+
+document.querySelector('#divide').onclick = function(){
+    display.value += '/'
+}
+
