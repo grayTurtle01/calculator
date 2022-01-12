@@ -1,7 +1,11 @@
+body{
+    background: #c2c2d6;
+}
+
 #calculator{
   width:300px;
   margin: auto;
-  margin-top: 20vh;
+  margin-top: 15vh;
   border: 1px solid black;
   border-radius: 10px;
   padding: 5px;
@@ -13,6 +17,8 @@
 
   background: black;
   color: orange;
+  font-family: digital;
+  font-size: 20px;
 }
 
 #buttons{
@@ -21,29 +27,33 @@
   grid-template-columns: 50% 25% 25%;
 }
 
+#buttons button{
+    height: 65px;
+}
+
 .big-button button{
     width: 50%;
     margin-right:-5px;
 }
 
 .number{
-    background: gray;
+    background: #4d4d4d;
     color: white;
     height: 100%;
 }
 
 .operation{
-    background: lightgray;
+    background: #666666;
     color: white;
 }
 
 #equals{
-    background: lightblue;
+    background: #004466;
     color: white;
 }
 
 #clear{
-   background: crimson;
+   background: #ac3939;
    color: white; 
 }
 
