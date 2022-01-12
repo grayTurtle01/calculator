@@ -21,28 +21,38 @@ let result = 0;
 let input = 0;
 
 document.querySelector('#equals').onclick = function(){
+    check_last_operator()
     input = display.value
     display.value = eval(input)
 }
 
 
 document.querySelector('#add').onclick = function(){
+    check_last_operator()
     display.value += '+'
 }
 
 document.querySelector('#subtract').onclick = function(){
+    check_last_operator()
     display.value += '-'
 }
 
 document.querySelector('#multiply').onclick = function(){
+    check_last_operator()
     display.value += '*'
 }
 
 document.querySelector('#divide').onclick = function(){
+    check_last_operator()
     display.value += '/'
 }
 // Decimal Point
 document.querySelector('#decimal').onclick = function(){
     if( display.value.slice(-1) != '.')
         display.value += '.'
+}
+
+function check_last_operator() {
+    if( "+-*/".includes( display.value.slice(-1) ))
+        display.value = display.value.slice(0,-1)
 }
