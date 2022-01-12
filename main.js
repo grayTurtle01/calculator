@@ -38,7 +38,6 @@ document.querySelector('#equals').onclick = function(){
    
     result = eval(str_formula)
     str_formula = ''
-    //str_formula = result
    
     display.value = result
     new_input = result
@@ -54,7 +53,7 @@ document.querySelector('#add').onclick = function(){
     check_last_operator()
     str_formula += '+'
     new_input = ''
-    console.log(str_formula)
+    
 
 }
 
@@ -67,7 +66,7 @@ document.querySelector('#subtract').onclick = function(){
     str_formula += '-'
     new_input = ''
 
-    console.log(str_formula)
+    
 
 }
 
@@ -81,7 +80,7 @@ document.querySelector('#multiply').onclick = function(){
     str_formula += '*'
     new_input = ''
 
-    console.log(str_formula)
+   
 }
 
 document.querySelector('#divide').onclick = function(){
@@ -93,7 +92,7 @@ document.querySelector('#divide').onclick = function(){
     str_formula += '/'
     new_input = ''
 
-    console.log(str_formula)
+   
 
 }
 // Decimal Point
@@ -102,8 +101,6 @@ document.querySelector('#decimal').onclick = function(){
         display.value += '.'
         new_input += '.'
     }
-
-    console.log(str_formula)
 }
 
 function check_last_operator() {
@@ -112,17 +109,10 @@ function check_last_operator() {
         str_formula = str_formula.slice(0,-1) 
     }
 
-    // if( "+-*/".includes( str_formula.slice(-1) )){
-    //     str_formula = str_formula.slice(0,-1)
-    // }
 }
 
 function check_last_operator_for_substract() {
     if( "-".includes( str_formula.slice(-1) )){
         str_formula = str_formula.slice(0,-1)
     }
-}
-
-display.onkeyup = function(){
-    console.log(str_formula)
 }
