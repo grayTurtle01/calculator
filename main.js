@@ -9,7 +9,10 @@ let numbers = document.querySelectorAll('.number')
 for( number of numbers){
     number.onclick = function(){
         let value = this.innerText
-        display.value += value
+        if( display.value == '0')
+            display.value = value
+        else
+            display.value += value
     }
 }
 
